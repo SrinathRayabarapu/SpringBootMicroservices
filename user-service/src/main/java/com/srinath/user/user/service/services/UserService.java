@@ -34,10 +34,11 @@ public class UserService {
         vo.setUser(user);
 
         log.info("Fetching Department by id : {}", user.getDepartmentId());
-        Department department = restTemplate.getForObject("http://localhost:9001/departments/" + user.getDepartmentId(),
+        Department department = restTemplate.getForObject("http://DEPARTMENT-SERVICE/departments/" + user.getDepartmentId(),
                 Department.class);
 
         vo.setDepartment(department);
         return vo;
     }
+
 }
