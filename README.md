@@ -10,4 +10,4 @@ Logs Tracing : Zipkin and Sleuth<p>
 
 
 <b>Project Mindmap</b><p>
-![img.png](img.png)
+![img.png](project-structure.png)
