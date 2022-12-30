@@ -17,8 +17,10 @@ ext {
 }
 
 dependencies {
+	// service registry
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
-	implementation 'org.springframework.cloud:spring-cloud-starter-config'
+
+	// spring test
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

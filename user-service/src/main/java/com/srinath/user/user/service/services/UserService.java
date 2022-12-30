@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Objects;
+
 @Service
 @Slf4j
 public class UserService {
@@ -24,7 +26,7 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public ResponseTemplateVO findUserByIdWithDepartment(Long userId) {
+    public ResponseTemplateVO getUserWithDepartmentById(Long userId) {
 
         ResponseTemplateVO vo = new ResponseTemplateVO();
 
@@ -33,11 +35,16 @@ public class UserService {
         User user = userRepository.findUserById(userId);
         vo.setUser(user);
 
-        log.info("Fetching Department by id : {}", user.getDepartmentId());
-        Department department = restTemplate.getForObject("http://DEPARTMENT-SERVICE/departments/" + user.getDepartmentId(),
-                Department.class);
+        if(Objects.nonNull(user)){
+            log.info("Fetching Department by id : {}", user.getDepartmentId());
+            Department department = restTemplate
+                    .getForObject("http://DEPARTMENT-SERVICE/departments/" + user.getDepartmentId(), Department.class);
 
-        vo.setDepartment(department);
+            vo.setDepartment(department);
+        } else {
+            log.warn("No user found with id : {}", userId);
+        }
+
         return vo;
     }
 

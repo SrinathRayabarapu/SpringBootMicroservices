@@ -8,5 +8,11 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/shabbirdwd53/config-server
+          uri: https://github.com/SrinathRayabarapu/springboot-config-server
           clone-on-start: true
+          default-label: main
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.cloud.config: DEBUG

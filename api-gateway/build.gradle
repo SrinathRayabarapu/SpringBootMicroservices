@@ -17,14 +17,23 @@ ext {
 }
 
 dependencies {
+	// actuator
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+	// api-gateway
 	implementation 'org.springframework.cloud:spring-cloud-starter-gateway'
+
+	// service registry
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+
+	// hystrix
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-hystrix'
+
+	// config server
 	implementation 'org.springframework.cloud:spring-cloud-starter-config'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
+
+	// spring test
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 dependencyManagement {

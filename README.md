@@ -9,16 +9,28 @@ Config Server : Spring Cloud Config Server <p>
 Logs Tracing : Zipkin and Sleuth<p>
 
 
+<b>Running Zipkin server: </b><p>
+java -jar zipkin-server-2.23.2-exec.jar<p>
+
+
+<b>Order of apps start up: </b><p>
+Config Server<p>
+Service Registry<p>
+API Gateway<p>
+User Service<p>
+Department Service<p>
+Hystrix Dashboard<p>
+
 <b>Project Mindmap</b><p>
 ![img.png](project-structure.png)
 
 <p>Credits to : https://youtu.be/BnknNTN8icw
 
 
-
-TODO: 
-
-1. Implement Spring Cloud Config Server : https://javatechonline.com/how-to-implement-spring-cloud-config-server-in-microservices/#What_is_Spring_Cloud_Config_Client
+TODO:
+1. Should Config server which gets the Eureka server info from Git also connect to Eureka as Client??
 2. Implement Redis Cache In Spring Boot Application : https://javatechonline.com/how-to-implement-redis-cache-in-spring-boot-application/
 3. Spring Cloud gateway : https://javatechonline.com/how-to-implement-spring-cloud-gateway-in-microservices/
-4. 
+
+
+
