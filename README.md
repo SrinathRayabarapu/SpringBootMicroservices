@@ -13,6 +13,10 @@ Logs Tracing : Zipkin and Sleuth<p>
 java -jar zipkin-server-2.23.2-exec.jar<p>
 
 
+<p>Once the application is started with Sleuth and Zipkin server is started then the logs will automatically flow in and 
+appear in Zipkin dashboard.<p> 
+
+
 <b>Order of apps start up: </b><p>
 Config Server<p>
 Service Registry<p>
@@ -30,7 +34,7 @@ Hystrix Dashboard<p>
 TODO:
 1. Should Config server which gets the Eureka server info from Git also connect to Eureka as Client??
 2. Implement Redis Cache In Spring Boot Application : https://javatechonline.com/how-to-implement-redis-cache-in-spring-boot-application/
-3. Spring Cloud gateway : https://javatechonline.com/how-to-implement-spring-cloud-gateway-in-microservices/
+
 
 
 
